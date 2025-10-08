@@ -1,0 +1,131 @@
+\documentclass{resume} % Use the custom resume.cls style
+
+\usepackage[left=0.5 in,top=0.5in,right=0.5 in,bottom=0.5in]{geometry} % Document margins
+\newcommand{\tab}[1]{\hspace{.2667\textwidth}\rlap{#1}} 
+\newcommand{\itab}[1]{\hspace{0em}\rlap{#1}}
+
+\usepackage{eso-pic}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+
+% Define the border dimensions and color
+\newlength{\borderwidth}
+\setlength{\borderwidth}{2pt}
+\definecolor{bordercolor}{RGB}{0,0,0}
+\newlength{\bordermargin}
+\setlength{\bordermargin}{10pt} % Adjust the margin as needed
+
+% Add the border using eso-pic
+\AddToShipoutPictureBG{%
+  \begin{tikzpicture}[overlay,remember picture]
+    \draw [line width=\borderwidth, color=bordercolor]
+      ($(current page.north west) + (\borderwidth+\bordermargin,-\borderwidth-\bordermargin)$)
+      rectangle
+      ($(current page.south east) + (-\borderwidth-\bordermargin,\borderwidth+\bordermargin)$);
+  \end{tikzpicture}%
+}
+
+
+%----------------------------------------------------------------------------------------
+% Contact Information
+%----------------------------------------------------------------------------------------
+
+\name{\makebox[\textwidth][c]{\textbf{Damon Diaz}}}
+\address{+1 (646) 875-2845 \\ 
+    \href{mailto:ddiazny919@gmail.com}{ddiazny919@gmail.com} \\
+\href{https://github.com/NoCapCbas}{github.com/NoCapCbas} \\
+    \href{https://linkedin.com/in/damondiaz}{linkedin.com/in/damondiaz} \\
+    \href{https://damondiaz.xyz}{damondiaz.xyz}
+} 
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+% Professional Summary
+%----------------------------------------------------------------------------------------
+
+% \begin{rSection}{Professional Summary}
+
+% {A self-motivated and lifelong learner.}
+
+% \end{rSection} 
+
+%----------------------------------------------------------------------------------------
+% Work Experience
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Work Experience}
+
+\textbf{Software Engineer} $|$ Trade Data Monitor $|$ \textit{Daniel Island, SC} \hfill Sep 2021 --- Present
+
+\begin{itemize}
+    \item Designed and developed a scalable application serving 30+ legal professionals, streamlining the global trade data collection process and enhanced data accessibility. Used Python, Django, JavaScript, MS SQL Server, deployed on IIS Server.
+    \item Reduced execution time of critical Python data collection scripts by over 80\%, from 6 hours to 25 minutes, utilizing Selenium Grid in Docker and orchestrating workflows with Apache Airflow.
+    \item Optimized application performance through strategic caching implementation, reducing page load times by 15\% and significantly improving user experience.
+    \item Designed a distributed system for concurrent data collection leveraging Selenium Grid and Selenium Nodes, increasing operational efficiency and robustness using Python, Selenium, SQL, and Apache Airflow.
+    \item Delivered a comprehensive statistical data visualization dashboard using FastAPI (python) and React.js (javascript), streamlining data insights, enhancing user experience, and the ability to compare data metrics across different timeframes for actionable insights.
+    \item Created a Control Panel for managing business user accounts, allowing user profile, permission, and settings management through a FastAPI(python) backend and React.js(javascript) interface.
+
+\end{itemize}
+    
+\textbf{Software Engineer Intern} $|$ LiveStock City $|$ \textit{Remote} \hfill Jul 2021 --- Sep 2021
+\begin{itemize}
+    \item Developed site functionality enhancements, debugged and troubleshot using Python, Django, JavaScript.
+    \item Implemented highly responsive form-based views and user interfaces, leveraging JavaScript to ensure seamless user interaction and an intuitive user experience.
+\end{itemize}
+
+\textbf{IT Technician} $|$ {TEK Systems} $|$ \textit{Charleston, SC} \hfill Apr 2021 --- Jul 2021
+\begin{itemize}
+    \item Installed 6,500 Cisco VoIP phones across 91 school sites, including providing updates and tech support.
+\end{itemize}
+
+\end{rSection} 
+
+%----------------------------------------------------------------------------------------
+% Projects
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Projects}
+
+\textbf {WTI Advisors Portal} $|$ \emph{Python, Django, Javascript, SQLServer, IIS Server}
+\begin{itemize}
+    \item Collaborated with a team to develop and deploy a full-featured client website enhancing data accessibility for over 30+ end-users.
+\end{itemize}
+
+\textbf{webStash} $|$ {\scriptsize \url{https://github.com/NoCapCbas/webstash.git}} $|$ \href{https://webstash.savvilabs.co}{https://webstash.savvilabs.co} $|$ \emph{javascript, AstroJS, Docker}\begin{itemize}
+    \item Bookmark your favorite sites. webStash is a simple tool to bookmark and organize your favorite websites. Used javascript, astrojs, sqlite, and docker.
+\end{itemize}
+
+\textbf{Math Assistant Chatbot} $|$ {\scriptsize \url{https://github.com/NoCapCbas/math-chatbot.git}} $|$ \href{https://math-chatbot.damondiaz.xyz}{https://math-chatbot.damondiaz.xyz} $|$ \emph{Python}\begin{itemize}
+    \item Developed a open-source 3rd grade math assistant chatbot that solves addition, subtraction, multiplication and division problems. Used python, streamlit, and docker.
+\end{itemize}
+
+\textbf{Inventory System Application} $|$ \emph{Java, JavaFX, MySQL}
+\begin{itemize}
+    \item Built an inventory management system for a small manufacturing organization, designed to meet specific business requirements and CRUD operations to significantly enhance operational efficiency.
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+% Skills
+%----------------------------------------------------------------------------------------
+\begin{rSection}{Skills}
+
+\begin{tabular}{ @{} >{\bfseries}l @{\hspace{6ex}} l }
+Python, JavaScript, TypeScript, SQL, Git, Bash, Docker, Django, NodeJS, React, Golang, Java, HTML5, CSS,\\
+Flask, Celery, Agile, CI/CD, Unit Testing, REST API, Full Stack, Frontend, Backend, C++, IaC, QA,\\
+Github Actions, Redis, Selenium, PlayWright, AWS, TDD, Microservices
+\end{tabular}\\
+
+\end{rSection}
+%----------------------------------------------------------------------------------------
+% Education Section (Shift below Projects if your projects are substantial)
+%----------------------------------------------------------------------------------------
+
+\begin{rSection}{Education}
+
+\textbf{Bachelor of Science, Computer Science}, Western Governors University \hfill Graduated {Dec 2022}\\
+\textbf{formation.dev}, SWE Mentorship \hfill {2024}
+
+\end{rSection}
+
+\end{document}
