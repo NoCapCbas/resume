@@ -23,11 +23,19 @@ jobs:
       with:
         token: ${{ secrets.GITHUB_TOKEN }}
     
-    - name: Setup LaTeX
-      uses: xu-cheng/latex-action@v3
+    - name: Install TeX Live
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y texlive-full
+    
+    - name: Set up Python
+      uses: actions/setup-python@v4
       with:
-        root_file: resume.tex
-        compiler: pdflatex
+        python-version: '3.x'
+    
+    - name: Build PDF with Python script
+      run: |
+        python3 latex_to_pdf.py resume.tex
     
     - name: Check if PDF was created
       run: |
